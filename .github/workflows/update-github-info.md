@@ -1,36 +1,24 @@
 ---
 name: update-github-info
-summary: Draft updates to Mona's GitHub Info website content from official GitHub sources.
-description: Read Mona's notes and the GitHub Blog/Changelog, update site/content/github-info.md, and propose the changes in a pull request for Mona to review.
+description: Read Mona's notes and official GitHub sources, update site/content/github-info.md, and propose the changes in a pull request for Mona to review.
 
 on:
-  schedule:
-    - cron: '0 9 * * *'
+  schedule: daily
   workflow_dispatch: {}
 
 tools:
-  edit:
-    allowed:
-      - notes/mona-notes.md
-      - site/content/github-info.md
-
-  network:
-    allowed:
-      - https://github.blog/
-      - https://github.blog/changelog/
-      - https://awesome-copilot.github.com/
-
-  github:
-    allowed:
-      - create-check-run
-      - create-pull-request
-
+  edit: {}
+  web-fetch: {}
+network:
+  allowed:
+    - github.blog
+    - github.com
+    - awesome-copilot.github.com
 safe-outputs:
-  create-check-run:
-    output:
-      summary: "Mona GitHub info update workflow executed"
-
-  update-pull-request:
+  create-pull-request:
+    title-prefix: "[mona site update] "
+    draft: true
+    fallback-as-issue: false
     allowed-base-branches:
       - main
 ---
