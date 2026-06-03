@@ -223,3 +223,41 @@ gh aw compile --validate
 - **Triggering runs**: Always use `gh aw run <workflow-name>` to trigger a workflow on demand — not `gh workflow run <file>.lock.yml`. `gh aw run` handles workflow resolution by short name, input parsing and validation, and correct run-tracking for agentic workflows. Use `--ref <branch>` to run on a specific branch.
 - **CLI commands reference**: For a complete guide on all `gh aw` commands and their MCP tool equivalents (for restricted environments), see `.github/aw/cli-commands.md`
 
+# Mona Agent Guardrails
+
+## Hard Constraints (DO NOT VIOLATE)
+
+The agent must strictly follow these rules:
+
+### 1. File scope restriction
+
+ONLY update this file:
+
+* `site/content/github-info.md`
+
+DO NOT modify any other files.
+
+### 2. Forbidden paths
+
+Never modify:
+
+* `.github/workflows/*`
+* `.github/aw/*`
+* any configuration files
+* any lock files
+
+### 3. Task intent
+
+This workflow is ONLY for website content updates.
+It is NOT for:
+
+* workflow changes
+* CI/CD modifications
+* repository configuration changes
+
+### 4. Validation requirement
+
+A pull request is INVALID if:
+
+* it does not modify `site/content/github-info.md`
+* or contains only workflow/config changes
