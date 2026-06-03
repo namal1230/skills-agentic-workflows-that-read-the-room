@@ -19,10 +19,12 @@ tools:
     allowed:
       - https://github.blog/latest/
       - https://github.blog/changelog/
+      - https://awesome-copilot.github.com/workflows/
   network:
     allowed:
       - github.blog
       - github.com
+      - awesome-copilot.github.com
 ---
 
 # Update Mona's GitHub Info website
@@ -32,9 +34,10 @@ Read `notes/mona-notes.md` before making any edits.
 Use these official sources when drafting changes:
 - `https://github.blog/latest/`
 - `https://github.blog/changelog/`
+- `https://awesome-copilot.github.com/workflows/`
 
 Update `site/content/github-info.md` with concise, practical GitHub guidance for Mona's readers.
-Add or refresh a section called `Latest GitHub Updates` and include source context from the GitHub Blog or GitHub Changelog where appropriate.
+Add or refresh a section called `Latest GitHub Updates` and include source context from the GitHub Blog, GitHub Changelog, or Awesome Copilot Workflows where appropriate.
 
 Do not write directly to `main`.
 Use `safe-outputs` with `create-pull-request` to open a pull request for Mona to review.
