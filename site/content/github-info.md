@@ -3,7 +3,8 @@
 ## Mona's editorial angle
 
 Mona's website focuses on practical GitHub guidance backed by official references from:
-
+- GitHub Actions continues improving automation and workflow security.
+- Copilot integrations are expanding across GitHub tools.
 - docs.github.com
 - github.blog
 - github.blog/changelog
@@ -16,3 +17,5 @@ Mona's website focuses on practical GitHub guidance backed by official reference
 - Recent GitHub Blog and Changelog stories worth watching.
 
 ## Latest GitHub Updates
+- GitHub Actions continues improving automation and workflow security.
+- Copilot integrations are expanding across GitHub tools.
